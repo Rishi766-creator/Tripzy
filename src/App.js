@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import React from 'react';
+import {BrowserRouter,Routes,Route} from 'react-router-dom';
+import Main from './expo/Main.js';
+import Home from './expo/Home.js';
+import Footer from './expo/Footer.js';
+import Trip from './expo/TripLog.js';
+import Login from './expo/Login.js';
+import Signup from './expo/Signup.js';
+import Track from './expo/Track.js';
+const App=()=>{
+  return(
+  <BrowserRouter>
+  <Routes>
+    <Route path='/' element={<Main />}></Route>
+    <Route path='/Home' element={<Home />}></Route>
+    <Route path='/Footer' element={<Footer />}></Route>
+    <Route path='/Trip' elemnet={<Trip />}></Route>
+    <Route path='/Login' element={<Login />}></Route>
+    <Route path='/Signup' element={<Signup />}></Route>
+    <Route path='/Home/Track' element={<Track />}></Route>
+  </Routes>
+  </BrowserRouter>
+  )
 }
-
 export default App;
